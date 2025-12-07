@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bmi  </title>
+</head>
+
+<body>
+    <script>
+        let weight = 60;  
+let height = 1.7;  
+
+let bmi = weight / (height * height);
+console.log("BMI =", bmi.toFixed(2));
+
+if (bmi < 18.5) {
+    console.log("Category: Underweight");
+} else if (bmi < 24.9) {
+    console.log("Category: Normal");
+} else if (bmi < 29.9) {
+    console.log("Category: Overweight");
+} else {
+    console.log("Category: Obese");
+}
+</script>
