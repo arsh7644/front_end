@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inline-Block Layout Example</title>
+  <style>
+    
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      background: #eef3fb;
+      color: #222;
+      line-height: 1.45;
+    }
+
+    .wrap {
+      width: 1000px;
+      max-width: 96%;
+      margin: 24px auto;
+      background: white;
+      border: 6px solid #e6eef9;
+      padding: 0;
+    }
+
+    
+    header {
+      background: #456b9c;
+      color: #fff;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    
+    nav {
+      background: rgba(255,255,255,0.06);
+      padding: 16px 12px;
+      text-align: center;
+      border-top: 6px solid rgba(255,255,255,0.02);
+    }
+    .nav-item {
+      display: inline-block;        
+      vertical-align: middle;
+      min-width: 150px;
+      margin: 0 10px;
+      padding: 12px 18px;
+      background: #9db7e0;
+      color: #07203a;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    
+    .container {
+      padding: 20px;
+    }
+
+    .left-col, .right-col {
+      display: inline-block;           
+      vertical-align: top;             
+    }
+
+    
+    .left-col {
+      width: 24%;                      
+      min-width: 180px;
+      background: #eaf6e9;
+      padding: 18px;
+      border-right: 1px solid rgba(0,0,0,0.04);
+    }
+    .left-col h3 { margin-top: 0; color: #2f5a3a; }
+    .menu-item {
+      padding: 14px 6px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      margin: 8px 0;
+    }
+
+
+    .right-col {
+      width: 72%;
+      padding: 12px 18px;
+      margin-left: 2%;
+      background: #f5f6f7;
+    }
+
+    .main-title {
+      font-size: 24px;
+      margin: 6px 0 14px;
+    }
+    .lead {
+      margin-bottom: 18px;
+    }
+
+    
+    .card {
+      display: inline-block;           
+      vertical-align: top;
+      width: calc(50% - 18px);
+      min-width: 220px;
+      margin: 8px;
+      padding: 18px;
+      background: #ead6e8;
+      border-radius: 4px;
+    }
+
+    
+    .info {
+      background: #fff1d7;
+      padding: 18px;
+      margin: 18px 18px 28px;
+      border-radius: 3px;
+    }
+
+    footer {
+      background: #3d6b9c;
+      color: #fff;
+      padding: 14px;
+      text-align: center;
+      font-size: 14px;
+      border-top: 6px solid rgba(255,255,255,0.06);
+    }
+
+    /* Make layout stack on narrow screens */
+    @media (max-width: 720px) {
+      .left-col, .right-col, .card { display: block; width: 100%; margin-left: 0; }
+      .card { margin: 10px 0; }
+      .left-col { order: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Float-Based Web Layout (Inline-Block version)</h1>
+    </header>
+
+    <nav>
+      <a class="nav-item" href="#">Home</a>
+      <a class="nav-item" href="#">About</a>
+      <a class="nav-item" href="#">Services</a>
+      <a class="nav-item" href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+      <!-- Left sidebar (inline-block) -->
+      <aside class="left-col" aria-label="Sidebar">
+        <h3>Sidebar</h3>
+        <div class="menu-item">Menu Item 1</div>
+        <div class="menu-item">Menu Item 2</div>
+        <div class="menu-item">Menu Item 3</div>
+        <div class="menu-item">Menu Item 4</div>
+        <div class="menu-item">Menu Item 5</div>
+      </aside>
+
+      <!-- Main content (inline-block) -->
+      <main class="right-col">
+        <div class="main-title">Main Content Area</div>
+        <p class="lead">This layout is created using <code>display: inline-block;</code> rather than floats. Using inline-block keeps elements in the inline formatting context while allowing width and height control.</p>
+
+        <!-- Two inline cards -->
+        <section aria-label="two-columns">
+          <article class="card">
+            <h4>Float Column 1</h4>
+            <p>This card is an inline-block column. Inline-block was commonly used as an alternative to floating columns.</p>
+          </article>
+
+          <article class="card">
+            <h4>Float Column 2</h4>
+            <p>This card is also inline-block. The gaps between inline-block elements are normal white-space gaps (fixable if needed).</p>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <section class="info" aria-label="about">
+      <h3>About Inline / Inline-block Layouts</h3>
+      <p>Using `display: inline-block` preserves the inline flow and lets you size elements with width/height. For modern responsive layouts, consider Flexbox or Grid, but inline-block still works for simple two/three column layouts.</p>
+    </section>
+
+    <footer>
+      © 2025 Inline-Block Layout Example. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
